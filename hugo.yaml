@@ -1,0 +1,118 @@
+---
+baseURL: 'https://cli.rocks/'
+languageCode: en-us
+title: 'CLI.ROCKS!'
+theme: ["PaperMod"]
+enableEmoji: true
+
+services:
+  googleAnalytics:
+    id: G-7TSVSJPL0D
+
+params:
+  env: production
+  title: 'CLI.ROCKS!'
+  description: 'Collection of CLI tools'
+  keywords: ['CLI Tools', 'Blog']
+  author: 'Dzintars'
+  dateFormat: '2006 Jan 02'
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowShareButtons: true
+  ShowCodeCopyButtons: true
+  HugoShortcodes:
+    BuyMeACoffee:
+      Slug: "cli.rocks"
+      Text: "Buy me a coffee"
+      Font: "Comic"
+      Emoji: "🥐"
+      ButtonColor: "ffdd00"
+      FontColor: "000000"
+      CoffeeColor: "ffffff"
+      CupColor: "000000"
+
+  showBreadCrumbs: true
+
+  profileMode:
+    enabled: true
+    title: Welcome!
+    subtitle: |
+      Probably a collection of great CLI tools.
+      Still gathering ideas, how this page should be built.
+      If you have any, fell free to suggest it in GitHub.
+    # imageUrl: "/images/img-new-512.png"
+    # imageTitle: "Main image"
+    # imageWidth: 160
+    # imageHeight: 160
+
+  homeInfoParams:
+    Title: Welcome!
+    Content: |
+      Probably a collection of great CLI tools.
+      Still gathering ideas, how this page should be built.
+      If you have any, fell free to suggest it in GitHub.
+
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/dzintars/cli.rocks"
+
+  editPost:
+    URL: "https://github.com/dzintars/cli.rocks/tree/hugo/content"
+    Text: "Suggest Changes"  # edit text
+    appendFilePath: true  # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10  # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: posts
+      url: /posts/
+      weight: 9
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: archive
+      name: archive
+      url: /archive/
+      weight: 30
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 40
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    style: monokai
+    # noClasses: false
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+  # goldmark:
+  #   renderer:
+  #     unsafe: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # necessary for search
+...
